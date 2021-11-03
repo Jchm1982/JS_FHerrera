@@ -1,0 +1,48 @@
+-> -> -> -> -> -> -> -> -> -> -> -> EJEMPLOS DE FILTROS -> -> -> -> -> -> -> -> -> -> -> -> 
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Ejercicio 02 - Profesor</title>
+
+
+    <!-- Incluir Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- ANIMATE.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Incluir AngularJS -->
+    <script src="js/lib/angular.min.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1> Filtros</h1>
+        <h4>en angularjs</h4>
+        <p>
+            Filtro de texto: {{ "FernaAndO" }}
+            <br>
+            Filtro de texto: {{ "FernaAndO" | uppercase}}(Aqui se coloca un filtro que esta despues de la TUBERIA)
+            <br>
+            Filtro de texto: {{ "FernaAndO" | lower}}(Aqui se coloca un filtro que esta despues de la TUBERIA)
+        </p>
+        <p>
+            Filtro de Moneda:{{ 1350 }}
+            <br>
+            Filtro de Moneda:{{ 1350 | currency }}
+            <br>
+            Filtro de Moneda:{{ 1350 | currency:'Col.' }}
+            <br>
+            Filtro de Moneda:{{ 1350 | currency:'' }}
+        </p>
+        <p>
+            Filtro de número:{{ 1350000}}
+            <br>
+            Filtro de número:{{ 1350000 | number}}
+        </p>
+    </div>
+</body>
+</html>
