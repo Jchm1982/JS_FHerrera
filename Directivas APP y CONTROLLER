@@ -1,0 +1,10 @@
+Para este caso se crea un archivo maestro, esto se generará en la carpeta JS, casi simpre se guarda con el nombre de app.js. Este archivo tendra las directivas o puede ser el 
+archivo principal del angular, y para hacer eso en este archivo se tiene que colcoar lo siguiente:
+var app = angular.module('universidadApp'[este es el nmbre de la aplicacion y se debe de asociar en la pag. pricipal],[][se manda un arreglo de argumentos o dependencias]);
+
+Dentro del archivo app.js, se crean ,los controladores de la siguiente manera:
+app.controller('profesorCtrl',function(){
+
+})
+
+**LOS CONTROLADORES SE ENCARGAN DE 
