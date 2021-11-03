@@ -1,0 +1,59 @@
+El ng-model permite enlazar con variables aunque noesten definidas
+Permite enlazar cualquier tipo de control
+
+
+-> -> -> -> -> -> -> -> -> -> -> ->  EJEMPLO DE CODIGO ng-model -> -> -> -> -> -> -> -> -> -> -> ->
+########################### EJEMPLO DE NG-MODEL DE CADA UNA DE SUS DIV
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Ejercicio 02 - Profesor</title>
+
+    <!-- Incluir Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- ANIMATE.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Incluir AngularJS -->
+    <script src="js/lib/angular.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>ng-model</h1>
+        <h4>en angularJS</h4>
+        <hr>
+
+        <p>
+            Su nombre: {{ nombre | uppercase}}
+            <br>
+            <input type="text" ng-model="nombre" class="form-control" placeholder="Ingrese su nombre">
+        </p>
+
+        <p>
+            Seleccione el país: {{ pais }}
+            <select class="form-control" ng-model="pais">
+                <option value="1">Costa Rica</option>
+                <option value="2">Mexico</option>
+                <option value="3">Colombia</option>
+            </select>
+        </p>
+        <p>
+            Seleccione las opciones que desea: {{ opt1 }}{{ opt2 }}
+            <br>
+            <input type="checkbox" ng-model="opt1">Opcion 1
+            <br>
+            <input type="checkbox" ng-model="opt2">Opcion 2
+        </p>
+        <p>
+            Seleccione el generó: {{ genero }}
+            <br>
+            <input type="radio" value="M" ng-model="geero"> Masculino
+            <br>
+            <input type="radio" value="F" ng-model="geero"> Femenino
+        </p>
+    </div>
+</body>
+</html>
