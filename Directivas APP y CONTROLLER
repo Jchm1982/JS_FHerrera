@@ -5,15 +5,69 @@ var app = angular.module('universidadApp'[este es el nmbre de la aplicacion y se
 Dentro del archivo app.js, se crean ,los controladores de la siguiente manera:
 
       app.controller('profesorCtrl',function(){
-
+      
+            //COLOCAMOS UNA PROPIEDAD A NUESTRO CONTROLADOR PROFESOR
+            this.profesor = profesorData;(Hace referencia a var profesorData)
+            
       });
+      
+      var profesorData = {
+          nombre: "Juan Carlos Pineda",
+          bio: "Saludos estudiante, mi nombre es Juan Carlos, encantado de conocerte, soy una apasionado instructor de matemáticas aplicadas cuánticas, más orientado a la física termonuclear. Mi vocación es ser maestro y lograr transmitir mis conocimientos a todos mis estudiantes!.",
+          edad: 47,
+          foto: "img/juancarlos.jpg"
+      }
 
 **LOS CONTROLADORES SE ENCARGAN DE MENEJAR UNA PARTE DE LA PAGINAO LA TOTALIDAD DE LA MISMA, PARA ESTE EJEMPLO EL profesorCtrlSE ENCARGARA DE TODAS LAS FUNCIONES
 RELACIONADAS CON EL PROFESOR
 
-var profesorData = {
-    nombre: "Juan Carlos Pineda",
-    bio: "Saludos estudiante, mi nombre es Juan Carlos, encantado de conocerte, soy una apasionado instructor de matemáticas aplicadas cuánticas, más orientado a la física termonuclear. Mi vocación es ser maestro y lograr transmitir mis conocimientos a todos mis estudiantes!.",
-    edad: 47,
-    foto: "img/juancarlos.jpg"
-}
+Y en el archivo index.html, como se creo un archivo nuevo, se debe de agregar en el archivo como en el ejemplo:
+
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Ejercicio 02 - Profesor</title>
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/app.js"></script>     <- <- <- <- <- <- <- <- <-<- <- <- ***AQUI SE CREA EL ARCHIVO PARA AGREGARLO EN EL INDEX***
+
+    </head>    
+    <body>
+        <div class="container" ng-controller="profesorCtrl as profe">     <- <- <- <- <- ASOCIAR EL controlador a la pagina (Debe ser el mismo  app.controller('profesorCtrl',function(){})
+        ***** TODO ESTE BLOQUE LO VA A MANEJAR ng-controller="profesorCtrl" TODAS LAS VARIABLES, PROPIEDADES Y FUNCIONES QUE SE CREARON DENTRO DEL ARCHIVO *****
+            <h1>Profesor</h1>
+            <h4> {{ profe.profesor.nombre(Este es la variable que se encuentra dentro del controlador) }}</h4> <- <- <- <- <- se coloco el alias al controlador
+            <hr>
+            
+            <div class="row">
+                <!-- ESTE DIV CONTIENE LA IMAGEN DEL PROFESOR-->
+                <div class="col-sm-3"> 
+                    <section class="panel">
+                        <div class="panel-body" align="center">
+                            <img ng-src="{{ profe.profesor.foto}}" class="img-circle" alt="" width="150px" height="150px"> <- <- <- <- <- es la dirección de la foto en el src=""
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- ESTE DIV CONTIENE LA BIO DEL PROFESOR-->                
+                <div class="col-sm-9">
+                      <section class="panel">
+                              <div class="panel-body">
+                              {{ profe.profesor.bio}}
+                              <br>
+                              <br>
+                              <strong>Edad:</strong> {{ profe.profesor.edad}} años
+                              </div>
+                      </section>
+                </div>
+                
+            </div>
+    
+        </div>
+    </body>
+</html>
+
+
