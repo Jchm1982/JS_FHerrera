@@ -3,8 +3,17 @@ archivo principal del angular, y para hacer eso en este archivo se tiene que col
 var app = angular.module('universidadApp'[este es el nmbre de la aplicacion y se debe de asociar en la pag. pricipal],[][se manda un arreglo de argumentos o dependencias]);
 
 Dentro del archivo app.js, se crean ,los controladores de la siguiente manera:
-app.controller('profesorCtrl',function(){
 
-})
+      app.controller('profesorCtrl',function(){
 
-**LOS CONTROLADORES SE ENCARGAN DE 
+      });
+
+**LOS CONTROLADORES SE ENCARGAN DE MENEJAR UNA PARTE DE LA PAGINAO LA TOTALIDAD DE LA MISMA, PARA ESTE EJEMPLO EL profesorCtrlSE ENCARGARA DE TODAS LAS FUNCIONES
+RELACIONADAS CON EL PROFESOR
+
+var profesorData = {
+    nombre: "Juan Carlos Pineda",
+    bio: "Saludos estudiante, mi nombre es Juan Carlos, encantado de conocerte, soy una apasionado instructor de matemáticas aplicadas cuánticas, más orientado a la física termonuclear. Mi vocación es ser maestro y lograr transmitir mis conocimientos a todos mis estudiantes!.",
+    edad: 47,
+    foto: "img/juancarlos.jpg"
+}
