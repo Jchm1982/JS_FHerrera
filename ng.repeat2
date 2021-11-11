@@ -1,0 +1,100 @@
+############################# CONTENIDO INDEX #############################
+
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>NG-REPEAT - ng-repeat</title>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Incluir Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        
+        <script src="js/app.js"></script>
+
+    </head>    
+    <body>
+      <div class="container" ng-controller="listadoCtrl">
+        <h1>ng-repeat</h1>
+        <h4>Manejando repeticiones</h4>
+        <ul>
+        **AQUI ES DONDE QUEREMOS QUE ESTE BLOQUE SE REPITA "N" VECES SE AGERGA EL ng-repeat
+          <li ng-repeat="nombre in  listado">
+              {{ nombre }}
+          <li>
+        </ul>
+        //CREAMOS UNA TABLA
+        <table class="table table-striped">
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Clase</th>
+          </tr>
+          //AQUI COLOCAMOS EL ng-repeat ya que es lo que queremos que se repita
+          <tr ng-repeat="profesor in listadoProfesores.profesores">
+            <td>{{ profesor.nombre }}</td>
+            <td>{{ profesor.edad }}</td>
+            <td>{{ profesor.clase }}</td>
+          </tr>
+        </table>
+        
+        //EJEMPLO DE TABLA DE MULTIPLICAR
+        <ul>
+          <li ng-repeat="numero in [1,2,3,4,5,6,7,8,9,10]">
+            2 X {{ numero }} = {{ 2 * numero }}
+          </li>
+        </ul>
+        
+        
+
+        //ESTE ES UN FILTRO JSON
+        {{ listadoProfesores | json }}
+        
+        <hr>
+      </div>
+    </body>
+</html>
+
+
+
+############################# CONTENIDO app.js ############################
+
+
+(function(){
+
+var app = angular.module('universidadApp',[ ]);
+
+app.controller('listadoCtrl', ['$scope', function($scope){
+
+    $scope.listado = ["Juan Carlos","Grisel Garcia","Mai Hernandez","Joshua Yurem"];
+
+    $scope.listadoProfesores = {
+        profesores:[{
+            nombre: "Juan Carlos",
+            edad: 39,
+            clase: "PEE"
+        },{
+            nombre:"Grisel Garcia",
+            edad: 35,
+            clase: "ICE"
+        },{
+            nombre:"Mai",
+            edad:16,
+            clase:"M110"
+        },{
+            nombre:"Joy",
+            edad:14,
+            clase:"M113"
+        }]
+
+    }
+}]);
+
+
+})();
+
