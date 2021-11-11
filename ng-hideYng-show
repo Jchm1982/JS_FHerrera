@@ -1,0 +1,12 @@
+Se deben de crear las directivas en el archivo app.js(el que controla el archivo), e este archivo se crea una bandera con un valor BOOLEANO, 
+de la siguiente forma:
+
+$scope.mostrarCaja =false;
+
+Y cuando queramos que cambie esa bandera lo tenemos que agregara en la accion que queramos el cambio.
+
+En el INDEX, Se tiene que biscar la seccion que se quiere ocultar y en el <div class="row" ng-show="mostrarCaja"></div> se debe de colocar
+la funcion como se muestra en el ejemplo anterior.
+
+
+
