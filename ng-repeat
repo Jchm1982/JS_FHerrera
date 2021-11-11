@@ -1,4 +1,4 @@
-############################# ARCHIVO INDEX #############################
+############################# CONTENIDO INDEX #############################
 
 <!DOCTYPE html>
 <html ng-app="universidadApp">
@@ -37,7 +37,7 @@
 
 
 
-############################# ARCHIVO app.js ############################
+############################# CONTENIDO app.js ############################
 
 
 (function(){
@@ -48,20 +48,6 @@ app.controller('listadoCtrl', ['$scope', function($scope){
 
     $scope.listado = ["Juan Carlos","Grisel Garcia","Mai Hernandez","Joshua Yurem"];
 
-    $scope.listadoProfesores = {
-        profesores:[{
-            nombre: "Juan Carlos",
-            edad: 39,
-            clase: "PEE"
-        },{
-            nombre:"Grisel Garcia",
-            edad: 35,
-            clase: "ICE"
-        },{
-            nombre:"Mai",
-            edad:16,
-            clase:"M110"
-        }]
 
     }
 }]);
