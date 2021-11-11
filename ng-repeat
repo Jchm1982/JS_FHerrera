@@ -1,0 +1,71 @@
+############################# ARCHIVO INDEX #############################
+
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>NG-REPEAT - ng-repeat</title>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Incluir Animate.css -->
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Incluir AngularJS -->
+        <script src="js/lib/angular.min.js"></script>
+        
+        <script src="js/app.js"></script>
+
+    </head>    
+    <body>
+      <div class="container" ng-controller="listadoCtrl">
+        <h1>ng-repeat</h1>
+        <h4>Manejando repeticiones</h4>
+        <ul>
+        **AQUI ES DONDE QUEREMOS QUE ESTE BLOQUE SE REPITA "N" VECES SE AGERGA EL ng-repeat
+          <li ng-repeat="nombre in  listado">
+              {{ nombre }}
+          <li>
+        </ul>
+        
+        {{ listado | json }}
+        <hr>
+      </div>
+    </body>
+</html>
+
+
+
+############################# ARCHIVO app.js ############################
+
+
+(function(){
+
+var app = angular.module('universidadApp',[ ]);
+
+app.controller('listadoCtrl', ['$scope', function($scope){
+
+    $scope.listado = ["Juan Carlos","Grisel Garcia","Mai Hernandez","Joshua Yurem"];
+
+    $scope.listadoProfesores = {
+        profesores:[{
+            nombre: "Juan Carlos",
+            edad: 39,
+            clase: "PEE"
+        },{
+            nombre:"Grisel Garcia",
+            edad: 35,
+            clase: "ICE"
+        },{
+            nombre:"Mai",
+            edad:16,
+            clase:"M110"
+        }]
+
+    }
+}]);
+
+
+})();
+
